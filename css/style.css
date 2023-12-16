@@ -1,0 +1,260 @@
+body {
+    background-image: url('background.png');
+    background-size: contain !important;
+    margin: 0;
+    padding: 0;
+}
+
+@font-face {
+    font-family: myFirstFont;
+    src: url('MajorMonoDisplay-Regular.ttf');
+  }
+
+
+@font-face {
+    font-family: mySecondFont;
+    src: url('AauxPro-Bold.ttf');
+  }
+
+* {
+    font-family: myFirstFont;
+    margin:0;
+}
+
+
+#aux {
+    font-family:  mySecondFont;
+    font-size: 14px;
+}
+  
+h1 {
+    font-family: myFirstFont;
+    font-size: 1.2vw;
+  }
+
+  h2 {
+    font-family: mySecondFont;
+    font-size: 1vw;
+    text-align: right;
+  }
+
+h1 {
+    overflow: hidden; /* Ensures the content is not revealed until the animation */
+    border-right: .15em solid black; /* The typwriter cursor */
+    white-space: nowrap; /* Keeps the content on a single line */
+    margin: 0 auto; /* Gives that scrolling effect as the typing happens */
+    /*letter-spacing: .15em; /* Adjust as needed */
+    animation: 
+      typing 6.5s steps(25, end),
+      blink-caret .75s step-end infinite;
+  }
+
+h3 {
+    font-family: 'Encode Sans', sans-serif;
+    font-size: 1.15vw;
+    text-align: right;
+  }
+
+h4 {
+    font-family: 'Encode Sans', sans-serif;
+    font-size: 0.7vw;
+    right:0;
+  }
+
+h5 {
+    font-family: myFirstFont;
+    font-size: 1.2vw;
+  }
+
+#myPolygon:hover + #myText {
+    visibility: visible;
+    font-family: mySecondFont;
+}
+
+#myPolygon2:hover + #myText2 {
+  visibility: visible;
+  font-family: mySecondFont;
+}
+
+#myPolygon3:hover + #myText3 {
+  visibility: visible;
+  font-family: mySecondFont;
+}
+  
+@keyframes rotateAnimation {
+    from { transform: rotate(0deg); }
+    to { transform: rotate(360deg); }
+}
+
+  @keyframes typing {
+    from { width: 0 }
+    to { width: 100% }
+  }
+  
+ @keyframes blink-caret {
+    from, to { border-color: transparent }
+    50% { border-color: black; }
+  }
+
+
+  @keyframes colorChange {
+    0% { fill: #EBEBEB; }
+    25% { fill: #fff0d3; } /* Light Salmon */
+    50% { fill: #dfc9cd; } /* Light Sea Green */
+    75% { fill: #ccdfc1; } /* Light Cyan */
+    100% { fill: #EBEBEB; }
+}
+
+.animated-color {
+    animation: colorChange 10s infinite;
+}
+
+.decor {
+    animation-name: ckw;
+    animation-duration: 15.5s;
+}
+
+@keyframes ckw {
+    0% {
+        transform: rotate(0deg);
+    }
+    100% {
+        transform: rotate(360deg);
+    }
+}
+
+
+#hoverImage {
+    display: none; 
+    position: absolute;
+    margin-top: -10%;
+}
+
+#hoverImage02 {
+    display: none;
+    position: absolute;
+    margin-top: -9.5%;
+}
+
+
+#hoverImage03 {
+  display: none; 
+  position: absolute;
+  margin-top: -10%;
+  
+}
+
+
+#hoverImage04 {
+  display: none; 
+  position: absolute;
+  margin-top: -10%;
+  
+}
+
+#hoverImage05 {
+  display: none; 
+  position: absolute;
+  margin-top: -10%;
+  
+}
+
+
+#hoverImage06 {
+  display: none; 
+  position: absolute;
+  margin-top: -9.3%;
+  
+}
+
+
+#hoverImage07 {
+  display: none; 
+  position: absolute;
+  margin-top: -9%;
+  
+}
+
+#hoverImage08 {
+  display: none; 
+  position: absolute;
+  margin-top: -11%;
+  
+}
+
+#hoverImage09 {
+  display: none; 
+  position: absolute;
+  margin-top: -10%;
+  
+}
+
+#hoverImage10 {
+  display: none; 
+  position: absolute;
+  margin-top: -11%;
+  
+}
+
+
+#hoverImage11 {
+  display: none; 
+  position: absolute;
+  margin-top: -9%;
+  
+}
+
+#hoverImage12 {
+  display: none; 
+  position: absolute;
+  margin-top: -10%;
+  
+}
+
+#hoverImage13 {
+  display: none; 
+  position: absolute;
+  margin-top: -10%;
+}
+
+#hoverImage14 {
+  display: none; 
+  position: absolute;
+  margin-top: -9%;
+  
+}
+
+#hoverImage15 {
+  display: none; 
+  position: absolute;
+  margin-top: -8%;
+  
+}
+
+#gridContainer {
+  display: grid;
+  grid-template-columns: repeat(10, 1fr); /* 10 columns */
+  grid-template-rows: repeat(4, 1fr); /* 4 rows */
+  gap: 1px;
+  min-height: 100vh; /* Minimum height of 100% of the viewport height */
+}
+
+.gridItem {
+  width: 100%;
+  height: 150px; /* Set a fixed height for each grid item */
+  background-size: cover;
+  background-position: center;
+  position: relative; /* Required for positioning of the text */
+  overflow: hidden; /* Ensure text does not overflow */
+}
+
+.gridItem:hover::after {
+  content: "Artist: @handle"; /* Text to display */
+  position: absolute;
+  left: 50%;
+  top: 30%;
+  transform: translate(-50%, -50%);
+  color: white; /* Text color */
+  font-size: 16px; /* Text size */
+  z-index: 10;
+}
